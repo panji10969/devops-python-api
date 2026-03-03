@@ -1,0 +1,3 @@
+[2026-03-03 16:30:21] INFO: Container api-server berjalan dengan normal.
+[2026-03-03 16:31:10] CRITICAL: Container api-server mati! Melakukan restart otomatis...
+[2026-03-03 16:31:10] RESOLVED: Container api-server berhasil dinyalakan kembali.

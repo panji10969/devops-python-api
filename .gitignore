@@ -1,0 +1,2 @@
+echo "server_monitor.log" > .gitignore
+echo "__pycache__/" >> .gitignore
