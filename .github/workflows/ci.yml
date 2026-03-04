@@ -1,0 +1,29 @@
+name: Robot Tester API
+
+# Kapan robot ini harus bekerja? 
+# Jawab: Setiap kali ada kode baru yang di-push ke branch 'main'
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  pengujian-otomatis:
+    # Robot akan meminjam server Ubuntu kosong milik GitHub
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. Mengambil kode dari repository
+      uses: actions/checkout@v3
+
+    - name: 2. Memasang Python di server GitHub
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.9"
+
+    - name: 3. Menginstal semua kebutuhan aplikasi
+      run: |
+        pip install -r requirements.txt
+
+    - name: 4. Menjalankan Ujian (Pytest)
+      run: |
+        pytest
